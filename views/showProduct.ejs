@@ -91,10 +91,12 @@ h1 {
 
 @media (max-width: 480px) {
   .container {
-    grid-template-columns: 1fr; /* single column on small devices */
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto; /* single column on small devices */
+    /* single column on small devices */
   }
   .product-card img {
-    height: 160px;
+    height: 600px;
   }
   .product-card h2 {
     font-size: 15px;
@@ -118,7 +120,7 @@ h1 {
             <% if (product.image) { %>
               <img src="/uploads/<%= product.image %>" alt="<%= product.title %>">
             <% } else { %>
-              <img src="/uploads/default.png" alt="No Image">
+              <img src="/uploads/default.png" alt="No Image" loading="lazy">
             <% } %>
             <h2><%= product.title %></h2>
             <p><%= product.description %></p>
